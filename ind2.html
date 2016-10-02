@@ -1,0 +1,43 @@
+;
+
+window.onload = function() {
+	if (data.twoParter === false) {
+			document.getElementById('seasonContent').innerHTML = 's' + data.season + ' / e' + data.episodeNumber;
+			document.getElementById('epDescription').innerHTML = data.episodeDescription;
+			document.getElementById('epTitle').innerHTML = data.title;
+			document.getElementById('epDate').innerHTML = data.airdate;
+		}
+	else if (data.twoParter === true) {
+		document.getElementById('seasonContent').innerHTML = 's' + data.episodeOne.season + ' / e' +
+			data.episodeOne.episodeNumber + ' & ' + data.episodeTwo.episodeNumber;
+		document.getElementById('epDescription').innerHTML = data.episodeOne.episodeDescription + '<br>' + data.episodeTwo.episodeDescription;
+		document.getElementById('epTitle').innerHTML = data.episodeOne.title + ' & ' + data.episodeTwo.title;
+		document.getElementById('epDate').innerHTML = data.episodeOne.airdate + ' & ' + data.episodeTwo.airdate;
+	}
+}
+
+</script>
+
+</head>
+
+<body>
+
+	<div id='allContent'>
+
+		<div id='partOne'>
+
+			<h1 class='watchNext'>Watch next:</h1>
+			<h2 class='season'><span id='seasonContent'>calculating...</span></h2>
+
+			<div id='detailsBox'>
+				<h1><span id='epTitle'></span></h1>
+				<h3>first aired: <span id='epDate'></span></h3>
+				<p><span id='epDescription'></span></p>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+
+</html>
