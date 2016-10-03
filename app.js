@@ -1,6 +1,8 @@
 var fs = require('fs');
 var app = require('http').createServer(handler);
 
+var port = process.env.PORT || 3000;
+
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -28,4 +30,4 @@ function handler(req, res){
     res.end(); 
 }
 
-app.listen(process.env.PORT);
+app.listen(port);
